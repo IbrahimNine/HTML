@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--establishing the HTML version-->
+<html>
+  <!--html is the root element, it contains all the other data of the document-->
+  <head>
+    <!--this tag is used to give the browser some information about the document (meta data)-->
+    <title>Ibrahim</title>
+    <!--giving my page the title on the tab bar-->
+    <link rel="icon" type="image/x-icon" href="MiniLogo.png" />
+    <!--linking small icon beside my page title-->
+    <style>
+      /* i added some creativity and made it more user friendly, inside this tag you'll find all the styling details */
+      body {
+        /* this block of code is meant to set the background color to darkgray and remove the margin */
+        background-color: darkgray;
+        margin: 0;
+      }
+      header {
+        /* this block is meant to give the header different background/text color while centering it with some more space (padding) */
+        background-color: #181818;
+        color: white;
+        text-align: center;
+        padding: 25px;
+      }
+      nav {
+        /* for the nav bar i wanted to keep appearing as the user scroll down in the page */
+        position: sticky;
+        top: 0;
+        background-color: #303030;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        z-index: 100;
+        box-shadow: 5px 5px 6px dimgray;
+      }
+      nav a {
+        /* i added this to give the text inside the nav bar a style instead of the standard hyperlink styling */
+        color: dimgray;
+        padding: 3%;
+        text-decoration: none;
+      }
+      nav a:hover {
+        /* for when we hover over one of those nav bar links to give it different style as if it's selected */
+        color: silver;
+      }
+      section {
+        /* to style my sections and grouped all of their settings here in one block */
+        text-align: center;
+        padding: 25px;
+        margin-left: 25%;
+        margin-right: 25%;
+      }
+      section h4,
+      section img {
+        /* to set the header and the image on one line */
+        vertical-align: middle;
+        display: inline;
+      }
+      section p {
+        color: #00001d;
+      }
+      table {
+        /* to center my table in the middle of the browser view */
+        margin-left: auto;
+        margin-right: auto;
+      }
+      footer {
+        background-color: #181818;
+        color: silver;
+        font-size: 17px;
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--all the elements inside of this tag are the visible contents on the browser-->
+    <header>
+      <!--semantic tag to give the user an introductory -->
+      <h1>My portfolio</h1>
+    </header>
+
+    <nav>
+      <!--i used this tag to put all the major navigation links together in one container-->
+      <a href="#">Home</a>
+      <!--a is used for linking and it's set to # which means something inside of the same page-->
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <section id="listen">
+      <!--another semantic tag is used to divide my document into major sections or blocks of contents that i can refer to and accessible by both web user and programmers-->
+      <h4>
+        Listen
+        <img src="SpeakerLogo.png" alt="speaker" width="30" height="auto" />
+      </h4>
+      <br />
+      <audio src="reading-voice.mp3" controls>
+        <!--this audio was added and linked to "reading-voice.mp3" file as an audio version of the displayed text after it-->
+        your browser doesn't support this audio
+      </audio>
+    </section>
+    <section id="about">
+      <!--i added an id attribute for every section so it can be easily linked in the nav bar-->
+      <h2>About Me</h2>
+      <p>
+        Hello, I'm Ibrahim, a passionate and dedicated web development student
+        with a strong desire to learn and grow in the field of web technologies.
+        With a keen interest in creating seamless and user-friendly websites, I
+        am constantly exploring new concepts and tools to enhance my skills. I
+        believe in the power of technology to transform ideas into reality. I
+        enjoy tackling complex problems and turning them into elegant solutions.
+        My curiosity drives me to delve into the world of coding, where I am
+        continually honing my skills in HTML, CSS, JavaScript, and various
+        frameworks.
+      </p>
+    </section>
+
+    <section id="work">
+      <h2>My Work</h2>
+      <p>
+        I designed and developed my own portfolio website (this one) from
+        scratch, showcasing my skills, projects, and achievements. It allowed me
+        to apply my knowledge of front-end technologies, hope it is well done
+      </p>
+    </section>
+
+    <section id="resume">
+      <h2>My Resume</h2>
+      <p>
+        I'm good at learning new things, i've had years of training as an
+        electronic technician now i can say i have two years of professional
+        experience.
+      </p>
+      <table border="1">
+        <!--a table with three columns (th) elements and three rows (tr) to show an organized data-->
+        <tr>
+          <th>Date</th>
+          <th>occupation</th>
+          <th>Job or study</th>
+        </tr>
+        <tr>
+          <td>2021-2023</td>
+          <td>method technician</td>
+          <td>job</td>
+        </tr>
+        <tr>
+          <td>2019-2021</td>
+          <td>electronic hardware design technician</td>
+          <td>training</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <!--i used the form tag on the contact section to group all the input given by the user in one block-->
+        <fieldset>
+          <!--also i used the fieldset tag to draw a line in the browser display so it tells the user how all of the elements inside of it are related-->
+          <label for="name">Name:</label>
+          <!--the label tag was put before every input to describe to the user what kind of input they are asked to give-->
+          <input type="text" id="name" name="name" required /><br /><br />
+          <!--the input is given the same name and id as its label to them to be related and required attribute has been added to tell the browser this field must be filed-->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+          <label for="message">Message:</label><br />
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            cols="50"
+            required
+          ></textarea
+          ><!--textarea tag has been used for multi-lines larger texts inputs-->
+          <br /><br />
+          <input type="submit" value="Submit" />
+        </fieldset>
+      </form>
+    </section>
+
+    <footer>
+      <!--finally the footer tag was added to have the authorship and copyright of the webpage-->
+      <p>&copy; 2023 Ibrahim. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
