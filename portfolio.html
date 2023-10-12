@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<!--establishing the HTML version-->
 <html>
-  <!--html is the root element, it contains all the other data of the document-->
   <head>
-    <!--this tag is used to give the browser some information about the document (meta data)-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ibrahim</title>
-    <!--giving my page the title on the tab bar-->
     <link rel="icon" type="image/x-icon" href="MiniLogo.png" />
-    <!--linking small icon beside my page title-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--linking the style.css file to the html-->
   </head>
 
   <body>
-    <!--all the elements inside of this tag are the visible contents on the browser-->
     <header>
-      <!--semantic tag to give the user an introductory -->
       <h1>My portfolio</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <nav>
-      <!--i used this tag to put all the major navigation links together in one container-->
-      <a href="#">Home</a>
-      <!--a is used for linking and it's set to # which means something inside of the same page-->
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <video
+      src="LoopingVideo.mp4"
+      autoplay
+      muted
+      loop
+      width="100%"
+      id="top"
+    ></video>
+
     <section id="listen">
-      <!--another semantic tag is used to divide my document into major sections or blocks of contents that i can refer to and accessible by both web user and programmers-->
-      <h4>
-        Listen
-        <img src="SpeakerLogo.png" alt="speaker" width="30" height="auto" />
-      </h4>
-      <br />
-      <audio src="reading-voice.mp3" controls>
-        <!--this audio was added and linked to "reading-voice.mp3" file as an audio version of the displayed text after it-->
-        your browser doesn't support this audio
-      </audio>
+      <abbr title="Listen to the text">
+        <img src="SpeakerLogo.png" alt="speaker" width="60" height="auto" />
+        <audio src="reading-voice.mp3" controls>
+          your browser doesn't support this audio
+        </audio>
+      </abbr>
     </section>
-    <section id="about">
-      <!--i added an id attribute for every section so it can be easily linked in the nav bar-->
+
+    <section id="about" class="text">
       <h2>About Me</h2>
       <p>
         Hello, I'm Ibrahim, a passionate and dedicated web development student
@@ -54,7 +54,11 @@
       </p>
     </section>
 
-    <section id="work">
+    <aside class="backtotop">
+      <abbr title="Back to the top"><a href="#top"> ↑ </a></abbr>
+    </aside>
+
+    <section id="work" class="text">
       <h2>My Work</h2>
       <p>
         I designed and developed my own portfolio website (this one) from
@@ -63,7 +67,7 @@
       </p>
     </section>
 
-    <section id="resume">
+    <section id="resume" class="text">
       <h2>My Resume</h2>
       <p>
         I'm good at learning new things, i've had years of training as an
@@ -71,7 +75,6 @@
         experience.
       </p>
       <table border="1">
-        <!--a table with three columns (th) elements and three rows (tr) to show an organized data-->
         <tr>
           <th>Date</th>
           <th>occupation</th>
@@ -91,15 +94,11 @@
     </section>
 
     <section id="contact">
-      <h2>Contact Me</h2>
-      <form>
-        <!--i used the form tag on the contact section to group all the input given by the user in one block-->
-        <fieldset>
-          <!--also i used the fieldset tag to draw a line in the browser display so it tells the user how all of the elements inside of it are related-->
+      <fieldset>
+        <legend><h2>Contact Me</h2></legend>
+        <form>
           <label for="name">Name:</label>
-          <!--the label tag was put before every input to describe to the user what kind of input they are asked to give-->
           <input type="text" id="name" name="name" required /><br /><br />
-          <!--the input is given the same name and id as its label to them to be related and required attribute has been added to tell the browser this field must be filed-->
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required /><br /><br />
           <label for="message">Message:</label><br />
@@ -109,16 +108,14 @@
             rows="4"
             cols="50"
             required
-          ></textarea
-          ><!--textarea tag has been used for multi-lines larger texts inputs-->
+          ></textarea>
           <br /><br />
           <input type="submit" value="Submit" />
-        </fieldset>
-      </form>
+        </form>
+      </fieldset>
     </section>
 
     <footer>
-      <!--finally the footer tag was added to have the authorship and copyright of the webpage-->
       <p>&copy; 2023 Ibrahim. All rights reserved.</p>
     </footer>
   </body>
